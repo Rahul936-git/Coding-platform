@@ -40,7 +40,7 @@ function Signup() {
   };
 
   const loginGoogle = async ()=>{
-    window.location.href = "http://localhost:7000/auth/google";
+    window.location.href = "/api/auth/google";
   }
 
   return (
