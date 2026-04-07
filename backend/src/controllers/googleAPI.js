@@ -36,7 +36,7 @@ const googleFetch = async (req, res) => {
     res.cookie("token", token,{
       httpOnly: true,
       secure: false, // true in production (HTTPS)
-      sameSite: "lax",
+      sameSite: "none",
     });
     return res.redirect(process.env.CLIENT_URL);
   }
@@ -62,7 +62,7 @@ const googleFetch = async (req, res) => {
     res.cookie("token", token,{
       httpOnly: true,
       secure: false, // true in production (HTTPS)
-      sameSite: "lax",
+      sameSite: "none",
       });
     res.redirect(process.env.CLIENT_URL);
   }
