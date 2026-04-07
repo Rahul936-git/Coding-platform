@@ -33,11 +33,14 @@ const googleFetch = async (req, res) => {
       emailId: user_info.emailId,
     };
     const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: 7200 });
-    res.cookie("token", token,{
+
+    res.cookie("token", token, {
       httpOnly: true,
-      secure: false, // true in production (HTTPS)
+      secure: true,
       sameSite: "none",
+      path: "/"
     });
+
     return res.redirect(process.env.CLIENT_URL);
   }
 
@@ -59,11 +62,14 @@ const googleFetch = async (req, res) => {
   };
 
     const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: 7200 });
-    res.cookie("token", token,{
+
+    res.cookie("token", token, {
       httpOnly: true,
-      secure: false, // true in production (HTTPS)
+      secure: true,
       sameSite: "none",
-      });
+      path: "/"
+    });
+
     res.redirect(process.env.CLIENT_URL);
   }
 
