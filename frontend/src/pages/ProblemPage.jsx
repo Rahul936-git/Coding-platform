@@ -188,11 +188,11 @@ const ProblemPage = () => {
   }
 
   return (
-      <div className="h-screen flex flex-col md:flex-row bg-base-100">
+    <div className="h-screen flex bg-base-100">
       {/* Left Panel */}
       <div
         className="flex flex-col border-r border-base-300"
-        style={{ width: window.innerWidth >= 768 ? `${leftWidth}%` : "100%" }}
+        style={{ width: `${leftWidth}%` }}
       >
         {/* Left Tabs */}
         <div className="tabs tabs-bordered bg-base-200 px-4">
@@ -359,11 +359,11 @@ const ProblemPage = () => {
       {/* Divider */}
       <div
         onMouseDown={handleMouseDown}
-        className="hidden md:block w-[6px] bg-base-300 hover:bg-primary cursor-col-resize"
+        className="w-[6px] bg-base-300 hover:bg-primary cursor-col-resize"
       ></div>
 
       {/* Right Panel */}
-      <div className="flex flex-col" style={{ width: window.innerWidth >= 768 ? `${100 - leftWidth}%` : "100%" }}>
+      <div className="flex flex-col" style={{ width: `${100 - leftWidth}%` }}>
         {/* Right Tabs */}
         <div className="tabs tabs-bordered bg-base-200 px-4">
           <button
@@ -416,7 +416,7 @@ const ProblemPage = () => {
               {/* Monaco Editor */}
               <div className="flex-1">
                 <Editor
-                  height={window.innerWidth < 768 ? "300px" : "100%"}
+                  height="100%"
                   language={getLanguageForMonaco(selectedLanguage)}
                   value={code}
                   onChange={handleEditorChange}
